@@ -2,8 +2,8 @@
 const progress = document.getElementById('progress'),
   prev = document.getElementById('prev'),
   next = document.getElementById('next'),
-  circles = document.querySelectorAll('.circle'),
-  actives = document.querySelectorAll('.active');
+  circles = document.querySelectorAll('.circle');
+  
 
 let currentActive = 1;
 
@@ -15,8 +15,9 @@ function update() {
       circle.classList.remove('active')
     }
   });
-
-  console.log(actives.length, circles.length);
+  const actives = document.querySelectorAll('.active');
+  
+  progress.style.width = (actives.length -1) / (circles.length -1) * 100 + '%';
 }
 
 next.addEventListener('click', () => {
